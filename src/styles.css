@@ -1,53 +1,48 @@
-.navbar {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
+/* Style for the sidebar container */
+.navbar-container {
+    width: 250px; /* Adjust width as needed */
+    background-color: #f0f0f0; /* Sidebar background color */
+    padding-top: 20px; /* Space for image at the top */
   }
   
-  .navbar h3 {
-    flex: 1;
-    text-align: center;
-    padding: 10px;
-    margin: 0;
-    background-color: #4caf50; /* Green */
-    color: white;
-    border-radius: 5px;
+  /* Style for the image */
+  .navbar-image {
+    display: block;
+    margin: 0 auto; /* Center the image */
   }
   
-  .navbar h3:hover {
-    background-color: #45a049; /* Darker green */
-  }
-
-  .left-component {
-    grid-column: 1 / 2; /* Span the first column */
-  grid-row: 1 / 3; /* Span both rows */
-  background-color: #333;
-  color: white;
-  }
-
-  .top-bar {
-    grid-column: 2 / 3; /* Span the second column */
-    grid-row: 1 / 2; /* Span the first row */
-    background-color: #555;
-    color: rgb(248, 0, 0);
+  /* Style for the h3 elements */
+  .navbar-container h3 {
+    padding: 10px 20px; /* Add padding to the h3 elements */
+    margin: 10px 0; /* Add margin between h3 elements */
+    font-size: 16px; /* Adjust font size as needed */
+    border-left: 3px solid transparent; /* Add border for the left symbol */
+    transition: border-left-color 0.3s ease; /* Smooth transition for border color */
   }
   
-  .right-component {
-    grid-column: 2 / 3; /* Span the second column */
-  grid-row: 2 / 3; /* Span the second row */
-  background-color: #ccc;
-  overflow: auto; /* Enable scrolling for overflow content */
+  /* Style for the h3 elements on hover */
+  .navbar-container h3:hover {
+    border-left-color: #007bff; /* Change border color on hover */
   }
-  .container {
-    display: grid;
-  grid-template-columns: 20% 1fr; /* 20% for navbar, rest for content */
-  grid-template-rows: 20% 1fr; /* 20% for profile bar, rest for content */
-  height: 100%;
+  
+  /* Specific styles for each h3 element */
+  .navbar-container h3:nth-child(1) {
+    border-left-color: #007bff; /* Color for Dashboard */
   }
-
-  body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  
+  .navbar-container h3:nth-child(2) {
+    border-left-color: #28a745; /* Color for Exercises */
   }
+  
+  .navbar-container h3:nth-child(3) {
+    border-left-color: #ffc107; /* Color for Analysis */
+  }
+  
+  .navbar-container h3:nth-child(4) {
+    border-left-color: #dc3545; /* Color for Therapist Connect */
+  }
+  
+  .navbar-container h3:nth-child(5) {
+    border-left-color: #6c757d; /* Color for Profile */
+  }
+  

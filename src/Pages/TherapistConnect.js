@@ -1,8 +1,12 @@
 import React from 'react'
+import Navbar from '../Components/Navbar'
 
 function TherapistConnect() {
   return (
-    <div>TherapistConnect</div>
+    <div>
+      <Navbar/>
+      <h1>Therapist Connect</h1>
+    </div>
   )
 }
 
