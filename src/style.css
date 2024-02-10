@@ -1,0 +1,25 @@
+.profile-bar {
+    display: flex;
+    align-items: right;
+    justify-content: center;
+  }
+  
+  .profile-picture {
+    align-self: flex-end; /* Align to the right side */
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    border-radius: 50%; /* This makes it circular */
+    overflow: hidden;
+    margin-right: 10px; /* Adjust spacing between image and username */
+  }
+  
+  
+  .profile-picture > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .username {
+    font-size: 18px; /* Adjust font size as needed */
+  }

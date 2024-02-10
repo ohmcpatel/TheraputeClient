@@ -1,60 +1,3 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Assuming you're using React Router v6
-import './sidebar.css';
-import logo from "../images/Hi.png"; 
-
-import {
-  FaTh,
-  FaUserAlt,
-  FaRegChartBar,
-  FaCommentAlt,
-} from "react-icons/fa";
-const size = 25;
-function Navbar() {
-  const navigate = useNavigate();
-  const items = [
-    {
-      name: "Dashboard",
-      icon: <FaTh size={size}/>,
-      onClick: () => navigate('/dashboard'),
-    },
-    {
-      name: "Exercises",
-      icon: <FaUserAlt size={size}/>,
-      onClick: () => navigate('/exercise'),
-    },
-    {
-      name: "Analysis",
-      icon: <FaRegChartBar size={size}/>,
-      onClick: () => navigate('/analysis'),
-    },
-    {
-      name: "Therapist Connect",
-      icon: <FaCommentAlt size={size}/>,
-      onClick: () => navigate('/therapist-connect'),
-    },
-    {
-      name: "Profile",
-      icon: <FaUserAlt/>,
-      onClick: () => navigate('/profile'),
-    },
-  ]
-  const menuItems = items.map((item, index) => (
-    <div className="sidebar-item" onClick={() => item.onClick()}>
-                <span className="sidebar-icon">{item.icon}</span>
-                <span className="sidebar-text">{item.name}</span>
-    </div>
-  ))
-  return (
-    <div className="navbar-container">
-    <img className="logo-picture" src={logo} width="200" height="auto" margin-bottom="40px" padding-left="30px" />
-      {menuItems}
-    </div>
-  );
-}
-
-export default Navbar;
-
 // import * as React from 'react';
 // import AppBar from '@mui/material/AppBar';
 // import Box from '@mui/material/Box';
@@ -73,7 +16,7 @@ export default Navbar;
 // const pages = ['Products', 'Pricing', 'Blog'];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-// export default function Navbar() {
+// function ResponsiveAppBar() {
 //   const [anchorElNav, setAnchorElNav] = React.useState(null);
 //   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -95,7 +38,7 @@ export default Navbar;
 //   return (
 //     <AppBar position="static">
 //       <Container maxWidth="xl">
-//         <Toolbar>
+//         <Toolbar disableGutters>
 //           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
 //           <Typography
 //             variant="h6"
@@ -216,3 +159,4 @@ export default Navbar;
 //     </AppBar>
 //   );
 // }
+// export default ResponsiveAppBar;

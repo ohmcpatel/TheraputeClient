@@ -1,9 +1,14 @@
-.container {
-    display: flex;
-    flex-direction: row;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FAFAFA;
+    font-family: 'roboto', sans-serif;
 }
+
+
 .secondContainer {
     display: flex;
     flex-direction: column;
 }
+
 

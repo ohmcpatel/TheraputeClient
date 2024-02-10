@@ -1,0 +1,30 @@
+.analysis-container {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+  }
+  
+  .analysis-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .chart-container {
+    margin-top: 40px;
+  }
+  
+  .additional-info {
+    margin-top: 40px;
+  }
+  
+  .additional-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .additional-info p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+  }
+  

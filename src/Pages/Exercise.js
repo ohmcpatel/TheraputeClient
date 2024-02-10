@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from '../Components/Navbar'
+import './Exercise.css'
 
 function Exercise() {
 
@@ -22,13 +23,18 @@ function Exercise() {
   return (
     <div>
       <Navbar/>
-    <iframe
-      id="iframe"
-      src="https://ohmcpatel-trial.hf.space"
-      frameborder="0"
-      width="850"
-      height="450"
-    ></iframe>
+      <div className='frame'>
+
+<iframe
+    src="https://pn23-hacklyticsgradio.hf.space"
+    frameborder="0"
+    width="1240"
+    height="720"
+    allow="camera"
+    class="gradio-asr"
+></iframe>
+      </div>
+
 
     <button onClick={() => sendDataToIframe(dataToSend)}>Click to send data to iframe</button>
 

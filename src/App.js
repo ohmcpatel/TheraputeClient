@@ -6,21 +6,24 @@ import Exercise from "./Pages/Exercise.js";
 import Login from "./Pages/Login.js";
 import Profile from "./Pages/Profile.js";
 import TherapistConnect from "./Pages/TherapistConnect.js"; // assuming TherapistConnect is a separate component
-import Navbar from "./Components/Navbar"
+import Navbar from "./Components/Navbar.js"
 import ProfileBar from "./Components/ProfileBar.js"
-import "./styles.css"
+import LandingPage from "./Pages/LandingPage.js"
+import Signup from "./Pages/Signup.js"
 import "./index.css"
 
 
 function App() {
   return (
-    <div className="container">
       <div className="secondContainer">
-        <ProfileBar className="top-component"/>
+        <ProfileBar className="top-component" imgSrc={"./images/dude2.jpeg"} username="Ohmy"/>
         <div className="bottom-component">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/exercise" element={<Exercise />} />
             <Route path="/analysis" element={<Analysis />} />
             <Route path="/login" element={<Login />} />
@@ -30,7 +33,6 @@ function App() {
         </BrowserRouter>
         </div>
       </div>
-    </div>
   );
 }
 

@@ -1,56 +1,63 @@
-.sidebar {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-  }
-  
-  .sidebar_icon {
-    background-color: #333;
-    color: white;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .sidebar_icon:hover {
-    background-color: #555;
-  }
-  
-  .sidebar_icon i {
-    font-size: 1.7rem;
-  }
-  
-  .sidebar_items {
-    background-color: #333;
-    color: white;
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-  }
-  
-  .sidebar_item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .sidebar_item:hover {
-    background-color: #555;
-  }
-  
-  .sidebar_item i {
-    font-size: 1.3rem;
-    margin-right: 10px;
-  }
-  
-  .sidebar_item p {
-    font-size: 1rem;
-  }
+/* Style for the sidebar container */
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%; /* Extend sidebar to full height */
+  width: 250px; /* Adjust width as needed */
+  background-color: white; /* Sidebar background color */
+  padding-top: 20px; /* Space for image at the top */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  z-index: 1000; /* Ensure sidebar stays on top */
+  transition: width 0.3s ease; /* Smooth transition for width */
+}
+
+/* Style for the image */
+.navbar-image {
+  display: block;
+  margin: 0 auto; /* Center the image */
+  padding-bottom: 40px;
+}
+
+/* Style for sidebar items */
+.sidebar-item {
+  padding: 15px 20px; /* Add padding to the sidebar items */
+  margin: 0; /* Remove default margin */
+  margin-bottom:30px;
+  font-size: 16px; /* Adjust font size as needed */
+  color: #ffffff; /* Text color */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Style for sidebar items on hover */
+.sidebar-item:hover {
+  background-color: #659eda; /* Change background color on hover */
+}
+
+.sidebar-text {
+  color: black;
+  font-size: 20px; /* Increase font size */
+  font-family: 'Your Chosen Font', sans-serif; /* Add font family */
+  letter-spacing: 2px; /* Increase letter spacing */
+}
+
+.sidebar-icon {
+  color: #0056b3;
+  padding: 10px;
+  padding-top: 5px;
+}
+/* Style for the main content */
+.main-content {
+  margin-left: 250px; /* Adjust based on sidebar width */
+  padding: 20px; /* Add padding to separate from sidebar */
+}
+
+.icon {
+  margin-right: 20px;
+  padding-right: 20px;
+}
+
+.text {
+  font-size: 20px; /* Adjust the font size as needed */
+}
