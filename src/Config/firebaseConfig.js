@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDoc, setDoc, doc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDoc, setDoc, doc, query, where, getDocs, updateDoc } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -40,16 +40,18 @@ export async function addUser(email, password, username, isActive, therapist) {
   // Function to get user by username
   export async function getUserByEmail(email) {
     try {
-      const querySnapshot = await getDoc(doc(db, "users", email));
-      console.log("query", querySnapshot.exists());
-      if (querySnapshot.exists()) {
-        return querySnapshot.data();
+      const q = query(collection(db, 'users'), where('email', '==', email));
+      const querySnapshot = await getDocs(q);
+      
+      if (!querySnapshot.empty) {
+        return querySnapshot.docs[0].data();
       } else {
-        return null;
+        return { error: 'User not found' }; // Return an object indicating user not found
       }
-    } catch (e) {
-      console.error("Error getting user: ", e);
-      return null;
+    } catch (error) {
+      console.error('Error getting user:', error);
+      // You can throw the error here if you want to handle it in the calling code
+      return { error: 'An error occurred' }; // Return an object indicating an error occurred
     }
   }
   
@@ -65,16 +67,25 @@ export async function addUser(email, password, username, isActive, therapist) {
   }
 
   export async function signInUserWithEmailAndPassword(email, password) {
-    try {
       const user = await getUserByEmail(email); // Get user data from Firestore
-      if (user && user.password === password) { // Check if user exists and password matches
+      console.log(user !== null);
+      if (user !== null && user.password === password) { // Check if user exists and password matches
         console.log("User signed in successfully!");
         return true; // Sign in user if password matches
       } else {
-        throw new Error(user, user.password, password); // Throw error if password doesn't match
+          return false;
       }
-    } catch (error) {
-      console.error("Error signing in: ", error);
-      throw error;
+    } 
+
+    
+    export async function logActiveUserOut() {
+        const activeUserQuery = query(collection(db, 'users'), where('isActive', '==', true));
+        const querySnapshot = await getDocs(activeUserQuery);
+
+    
+        querySnapshot.forEach(async (doc) => {
+            const userRef = doc.ref;
+            await updateDoc(userRef, { isActive: false });
+        });
     }
-  }
+    

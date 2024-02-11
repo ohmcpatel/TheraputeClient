@@ -23,13 +23,18 @@ function Navbar() {
       icon: <FaUserAlt size={size}/>,
       onClick: () => navigate('/exercise'),
     },
+    // {
+    //   name: "Gallery",
+    //   icon: <FaUserAlt size={size}/>,
+    //   onClick: () => navigate('/exercise-gallery'),
+    // },
     {
       name: "Analysis",
       icon: <FaRegChartBar size={size}/>,
       onClick: () => navigate('/analysis'),
     },
     {
-      name: "Therapist Connect",
+      name: "Connect",
       icon: <FaCommentAlt size={size}/>,
       onClick: () => navigate('/therapist-connect'),
     },

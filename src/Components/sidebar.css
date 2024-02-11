@@ -28,6 +28,8 @@
   color: #ffffff; /* Text color */
   cursor: pointer; /* Change cursor to pointer on hover */
   transition: background-color 0.3s ease; /* Smooth transition for background color */
+  display: flex;
+  align-items: center;
 }
 
 /* Style for sidebar items on hover */
@@ -40,12 +42,13 @@
   font-size: 20px; /* Increase font size */
   font-family: 'Your Chosen Font', sans-serif; /* Add font family */
   letter-spacing: 2px; /* Increase letter spacing */
+
 }
 
 .sidebar-icon {
   color: #0056b3;
   padding: 10px;
-  padding-top: 5px;
+  padding-top: 10px;
 }
 /* Style for the main content */
 .main-content {
@@ -62,26 +65,60 @@
   font-size: 20px; /* Adjust the font size as needed */
 }
 
+/* sidebar.css */
+
 .profile-bar {
   display: flex;
-  align-items: center;
-  background-color: #f0f0f0;
-  border-radius: 8px;
-  padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center; /* Center items vertically */
+  position: relative;
+  padding: 10px 5px 10px 5px;
+  background-color: #F6FEFF;
 }
 
-.profile-icon {
-  width: 40px;
-  height: 40px;
-  background-color: #007bff; /* Sample color for profile icon */
-  border-radius: 50%;
-  margin-right: 15px;
-}
-
+/* Welcome Text */
 .welcome-text {
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
+  margin-right: 10px; /* Add some margin to separate from profile icon */
 }
 
+/* Profile Icon */
+.profile-icon {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px); /* Position below profile icon */
+  left: 57%; /* Position relative to the center */
+  transform: translateX(-50%); /* Center horizontally */
+  z-index: 1000;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 5px 0;
+  min-width: 120px;
+}
+
+/* Dropdown Menu Items */
+.dropdown-menu a {
+  display: block; /* Display as block for full width */
+  padding: 8px 16px; /* Add padding */
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Set text color */
+}
+
+/* Dropdown Menu Item Hover */
+.dropdown-menu a:hover {
+  background-color: #f5f5f5; /* Light gray background on hover */
+}
+
+
+.btn-profile {
+  border: none;
+  background-color: transparent;
+}

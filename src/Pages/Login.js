@@ -4,6 +4,7 @@ import { signInUserWithEmailAndPassword } from '../Config/firebaseConfig'; // Im
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const [incorrectPassword, setIncorrectPassword] = useState(false)
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
@@ -13,11 +14,15 @@ const Login = () => {
     e.preventDefault();
     
     try {
-      if(signInUserWithEmailAndPassword(email, password)){
+      const answer = await signInUserWithEmailAndPassword(email, password);
+      if(answer){
         setEmail('');
         setPassword('');
         setError(null);
         navigate('/dashboard');
+        
+      } else {
+        setIncorrectPassword(prev => !prev)
       }// Call the signInUserWithEmailAndPassword function
       
     } catch (error) {
@@ -47,12 +52,13 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+          {incorrectPassword && <h3>Incorrect Password</h3>}
           <button type="submit" className="login-btn">Login</button>
         </form>
         {error && <p className="error-message">{error}</p>}
       </main>
       <footer className='footer-login'>
-        <p>Don't have an account yet? <a href="/signup">Sign up</a></p>
+        <p className='noAccount'>Don't have an account yet? <a href="/signup">Sign up</a></p>
       </footer>
     </div>
   );

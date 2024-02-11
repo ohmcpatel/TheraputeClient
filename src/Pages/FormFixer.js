@@ -1,13 +1,13 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
 
-function Dashboard() {
+function FormFixer() {
   return (
     <div>
       <Navbar/>
-      <h1>Dashboard</h1>
+      <h1>FormFixer</h1>
     </div>
   )
 }
 
-export default Dashboard
+export default FormFixer

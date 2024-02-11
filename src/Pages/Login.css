@@ -51,7 +51,7 @@
   }
   
   .footer-login {
-    background-color: #ffffff;
+    background-color: #FAFAFA;
     padding: 20px;
   }
   
@@ -65,3 +65,6 @@
     color: #0056b3;
   }
   
+  .noAccount {
+    background-color:#FAFAFA;
+  }

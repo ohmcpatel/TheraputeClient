@@ -2,9 +2,11 @@ import React from 'react';
 import './LandingPage.css'; // Import your CSS file for styling
 
 const LandingPage = () => {
+
+
   return (
     <div className="landing-page">
-      <header>
+      <header className='landing-page-header'>
         <h1>Therapute</h1>
         <p>We use AI to help you perfect your exercise form.</p>
       </header>
@@ -12,8 +14,9 @@ const LandingPage = () => {
         <section className="hero">
           <h2>Perfect Your Form with AI</h2>
           <p>Our cutting-edge AI technology analyzes your exercise pose and provides real-time feedback to ensure you're performing exercises correctly.</p>
-          <button className="cta-btn">Get Started</button>
-        </section>
+          <form action="http://localhost:3000/dashboard">
+            <input className="cta-btn" type="submit" value="Get Started" />
+        </form>        </section>
         <section className="features">
           <div className="feature">
             <h3>Real-time Feedback</h3>
